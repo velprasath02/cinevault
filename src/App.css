@@ -804,6 +804,12 @@ body {
   color: white;
 }
 
+.cast-slider-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
 .cast-grid {
   display: flex;
   gap: 15px;
@@ -1026,6 +1032,7 @@ body {
 /* Custom Toast Notification Component Styling */
 .toast-notification {
   position: fixed;
+  z-index: 99999;
   bottom: -60px; /* Hidden state */
   left: 50%;
   transform: translateX(-50%);
@@ -1605,6 +1612,9 @@ body {
 
   .info {
     text-align: center;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
   }
 
   .info h1 {
@@ -1659,14 +1669,20 @@ body {
     white-space: nowrap;
   }
 
+  .cast-slider-wrapper {
+    width: 100%;
+    overflow: hidden;
+  }
+
   .cast-grid {
     gap: 10px;
     padding-bottom: 10px;
+    width: 100%;
   }
 
   .cast-grid .cast-member {
-    flex: 0 0 calc((100% - 30px) / 4);
-    width: calc((100% - 30px) / 4);
+    flex: 0 0 75px;
+    width: 75px;
   }
 
   .cast-grid .cast-member img {
@@ -1899,5 +1915,19 @@ body {
   .cards-scrollable .skeleton-card .skeleton-card-date,
   .cards-scrollable .skeleton-card .skeleton-card-btn {
     display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .toast-notification {
+    width: 95%;
+    max-width: 340px;
+    padding: 12px 20px;
+    font-size: 13px;
+    justify-content: center;
+    bottom: -80px;
+  }
+  .toast-notification.show {
+    bottom: 20px;
   }
 }

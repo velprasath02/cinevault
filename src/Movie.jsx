@@ -398,7 +398,7 @@ function Movie() {
                             {credits.cast && credits.cast.length > 0 && (
                                 <div className="credits-section" style={{ borderTop: "none", paddingTop: 0 }}>
                                     <div className="credits-title">Top Billed Cast</div>
-                                    <div style={{ position: "relative", display: "flex", alignItems: "center" }}>
+                                    <div className="cast-slider-wrapper">
                                         <div className="cast-grid" ref={castGridRef}>
                                             {credits.cast.slice(0, 15).map(actor => (
                                                 <div key={actor.cast_id} className="cast-member">
