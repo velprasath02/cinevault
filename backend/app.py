@@ -29,7 +29,7 @@ CORS(app)
 def tmdb_proxy(subpath):
     try:
         query_params = dict(request.args)
-        query_params['api_key'] = os.environ.get('TMDB_API_KEY', 'b759388d5097eba7777306608a8f46ff')
+        query_params["api_key"] = os.environ["TMDB_API_KEY"]
         encoded_query = urllib.parse.urlencode(query_params)
         url = f"https://api.themoviedb.org/3/{subpath}?{encoded_query}"
         
