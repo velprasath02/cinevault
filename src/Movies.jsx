@@ -14,6 +14,12 @@ function Movies() {
     const [searchResults, setSearchResults] = useState([])
     const navigate = useNavigate()
 
+    // Loading states for skeleton loaders
+    const [loadingTrending, setLoadingTrending] = useState(true)
+    const [loadingPopular, setLoadingPopular] = useState(true)
+    const [loadingTop, setLoadingTop] = useState(true)
+    const [loadingUpcoming, setLoadingUpcoming] = useState(true)
+
     // Custom Toast Notification State
     const [toast, setToast] = useState({ show: false, message: "", type: "success" })
 
@@ -25,39 +31,42 @@ function Movies() {
     }
 
     useEffect(() => {
-        fetch("http://localhost:5000/api/tmdb/trending/movie/day")
-            .then(response => response.json())
-            .then(data => settrending(data.results))
+        setLoadingTrending(true)
+        setLoadingPopular(true)
+        setLoadingTop(true)
+        setLoadingUpcoming(true)
 
-        fetch("http://localhost:5000/api/tmdb/movie/popular")
+        fetch("https://cinevault-backend-nh60.onrender.com/api/tmdb/trending/movie/day")
             .then(response => response.json())
             .then(data => {
-                if (data.results) {
-                    setmovie(data.results)
-                } else {
-                    setmovie([])
-                }
+                settrending(data.results || [])
             })
+            .catch(err => console.error(err))
+            .finally(() => setLoadingTrending(false))
 
-        fetch("http://localhost:5000/api/tmdb/movie/top_rated")
+        fetch("https://cinevault-backend-nh60.onrender.com/api/tmdb/movie/popular")
             .then(response => response.json())
             .then(data => {
-                if (data.results) {
-                    settop(data.results)
-                } else {
-                    settop([])
-                }
+                setmovie(data.results || [])
             })
+            .catch(err => console.error(err))
+            .finally(() => setLoadingPopular(false))
 
-        fetch("http://localhost:5000/api/tmdb/movie/upcoming")
+        fetch("https://cinevault-backend-nh60.onrender.com/api/tmdb/movie/top_rated")
             .then(response => response.json())
             .then(data => {
-                if (data.results) {
-                    setupcoming(data.results)
-                } else {
-                    setupcoming([])
-                }
+                settop(data.results || [])
             })
+            .catch(err => console.error(err))
+            .finally(() => setLoadingTop(false))
+
+        fetch("https://cinevault-backend-nh60.onrender.com/api/tmdb/movie/upcoming")
+            .then(response => response.json())
+            .then(data => {
+                setupcoming(data.results || [])
+            })
+            .catch(err => console.error(err))
+            .finally(() => setLoadingUpcoming(false))
     }, [])
 
     useEffect(() => {
@@ -67,9 +76,10 @@ function Movies() {
         }
 
         const timeout = setTimeout(() => {
-            fetch(`http://localhost:5000/api/tmdb/search/movie?query=${query}`)
+            fetch(`https://cinevault-backend-nh60.onrender.com/api/tmdb/search/movie?query=${query}`)
                 .then(res => res.json())
-                .then(data => setSearchResults(data.results))
+                .then(data => setSearchResults(data.results || []))
+                .catch(err => console.error(err))
         }, 400)
 
         return () => clearTimeout(timeout)
@@ -85,7 +95,7 @@ function Movies() {
         }
 
         try {
-            const res = await fetch("http://localhost:5000/watchlist", {
+            const res = await fetch("https://cinevault-backend-nh60.onrender.com/watchlist", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -120,19 +130,30 @@ function Movies() {
                     <i className="fa-solid fa-fire" style={{ color: "#E50914", marginRight: "8px" }}></i> Trending Now
                 </h2>
                 <div className="cards-scrollable">
-                    {trending.map(m => (
-                        <div className="movie-card" key={m.id} onClick={() => navigate('/movie/' + m.id)}>
-                            <img src={`https://image.tmdb.org/t/p/w500${m.poster_path}`} alt="" />
-                            <h4>{m.title}</h4>
-                            <h5>{m.release_date}</h5>
-                            <button className="watch" onClick={(e) => handleAddToWatchlist(e, m)}>
-                                <i className="fa-solid fa-plus"></i> Add to Watchlist
-                            </button>
-                            <div className="rating-badge">
-                                <i className="fa-solid fa-star" style={{ color: "#FFD700" }}></i> {m.vote_average?.toFixed(1)}
+                    {loadingTrending ? (
+                        Array(6).fill(0).map((_, idx) => (
+                            <div className="skeleton-card" key={idx}>
+                                <div className="skeleton skeleton-card-img"></div>
+                                <div className="skeleton skeleton-card-title"></div>
+                                <div className="skeleton skeleton-card-date"></div>
+                                <div className="skeleton skeleton-card-btn"></div>
                             </div>
-                        </div>
-                    ))}
+                        ))
+                    ) : (
+                        trending.map(m => (
+                            <div className="movie-card" key={m.id} onClick={() => navigate('/movie/' + m.id)}>
+                                <img src={`https://image.tmdb.org/t/p/w500${m.poster_path}`} alt="" />
+                                <h4>{m.title}</h4>
+                                <h5>{m.release_date}</h5>
+                                <button className="watch" onClick={(e) => handleAddToWatchlist(e, m)}>
+                                    <i className="fa-solid fa-plus"></i> Add to Watchlist
+                                </button>
+                                <div className="rating-badge">
+                                    <i className="fa-solid fa-star" style={{ color: "#FFD700" }}></i> {m.vote_average?.toFixed(1)}
+                                </div>
+                            </div>
+                        ))
+                    )}
                 </div>
             </div>
 
@@ -141,19 +162,30 @@ function Movies() {
                     <i className="fa-solid fa-film" style={{ color: "#E50914", marginRight: "8px" }}></i> Popular Movies
                 </h2>
                 <div className="cards-scrollable">
-                    {movie.map(m => (
-                        <div className="movie-card" key={m.id} onClick={() => navigate('/movie/' + m.id)}>
-                            <img src={`https://image.tmdb.org/t/p/w500${m.poster_path}`} alt="" />
-                            <h4>{m.title}</h4>
-                            <h5>{m.release_date}</h5>
-                            <button className="watch" onClick={(e) => handleAddToWatchlist(e, m)}>
-                                <i className="fa-solid fa-plus"></i> Add to Watchlist
-                            </button>
-                            <div className="rating-badge">
-                                <i className="fa-solid fa-star" style={{ color: "#FFD700" }}></i> {m.vote_average?.toFixed(1)}
+                    {loadingPopular ? (
+                        Array(6).fill(0).map((_, idx) => (
+                            <div className="skeleton-card" key={idx}>
+                                <div className="skeleton skeleton-card-img"></div>
+                                <div className="skeleton skeleton-card-title"></div>
+                                <div className="skeleton skeleton-card-date"></div>
+                                <div className="skeleton skeleton-card-btn"></div>
                             </div>
-                        </div>
-                    ))}
+                        ))
+                    ) : (
+                        movie.map(m => (
+                            <div className="movie-card" key={m.id} onClick={() => navigate('/movie/' + m.id)}>
+                                <img src={`https://image.tmdb.org/t/p/w500${m.poster_path}`} alt="" />
+                                <h4>{m.title}</h4>
+                                <h5>{m.release_date}</h5>
+                                <button className="watch" onClick={(e) => handleAddToWatchlist(e, m)}>
+                                    <i className="fa-solid fa-plus"></i> Add to Watchlist
+                                </button>
+                                <div className="rating-badge">
+                                    <i className="fa-solid fa-star" style={{ color: "#FFD700" }}></i> {m.vote_average?.toFixed(1)}
+                                </div>
+                            </div>
+                        ))
+                    )}
                 </div>
             </div>
 
@@ -162,19 +194,30 @@ function Movies() {
                     <i className="fa-solid fa-star" style={{ color: "#E50914", marginRight: "8px" }}></i> Top Rated
                 </h2>
                 <div className="cards-scrollable">
-                    {top.map(m => (
-                        <div className="movie-card" key={m.id} onClick={() => navigate('/movie/' + m.id)}>
-                            <img src={`https://image.tmdb.org/t/p/w500${m.poster_path}`} alt="" />
-                            <h4>{m.title}</h4>
-                            <h5>{m.release_date}</h5>
-                            <button className="watch" onClick={(e) => handleAddToWatchlist(e, m)}>
-                                <i className="fa-solid fa-plus"></i> Add to Watchlist
-                            </button>
-                            <div className="rating-badge">
-                                <i className="fa-solid fa-star" style={{ color: "#FFD700" }}></i> {m.vote_average?.toFixed(1)}
+                    {loadingTop ? (
+                        Array(6).fill(0).map((_, idx) => (
+                            <div className="skeleton-card" key={idx}>
+                                <div className="skeleton skeleton-card-img"></div>
+                                <div className="skeleton skeleton-card-title"></div>
+                                <div className="skeleton skeleton-card-date"></div>
+                                <div className="skeleton skeleton-card-btn"></div>
                             </div>
-                        </div>
-                    ))}
+                        ))
+                    ) : (
+                        top.map(m => (
+                            <div className="movie-card" key={m.id} onClick={() => navigate('/movie/' + m.id)}>
+                                <img src={`https://image.tmdb.org/t/p/w500${m.poster_path}`} alt="" />
+                                <h4>{m.title}</h4>
+                                <h5>{m.release_date}</h5>
+                                <button className="watch" onClick={(e) => handleAddToWatchlist(e, m)}>
+                                    <i className="fa-solid fa-plus"></i> Add to Watchlist
+                                </button>
+                                <div className="rating-badge">
+                                    <i className="fa-solid fa-star" style={{ color: "#FFD700" }}></i> {m.vote_average?.toFixed(1)}
+                                </div>
+                            </div>
+                        ))
+                    )}
                 </div>
             </div>
 
@@ -183,19 +226,30 @@ function Movies() {
                     <i className="fa-solid fa-calendar-days" style={{ color: "#E50914", marginRight: "8px" }}></i> Upcoming
                 </h2>
                 <div className="cards-scrollable">
-                    {upcoming.map(m => (
-                        <div className="movie-card" key={m.id} onClick={() => navigate('/movie/' + m.id)}>
-                            <img src={`https://image.tmdb.org/t/p/w500${m.poster_path}`} alt="" />
-                            <h4>{m.title}</h4>
-                            <h5>{m.release_date}</h5>
-                            <button className="watch" onClick={(e) => handleAddToWatchlist(e, m)}>
-                                <i className="fa-solid fa-plus"></i> Add to Watchlist
-                            </button>
-                            <div className="rating-badge">
-                                <i className="fa-solid fa-star" style={{ color: "#FFD700" }}></i> {m.vote_average?.toFixed(1)}
+                    {loadingUpcoming ? (
+                        Array(6).fill(0).map((_, idx) => (
+                            <div className="skeleton-card" key={idx}>
+                                <div className="skeleton skeleton-card-img"></div>
+                                <div className="skeleton skeleton-card-title"></div>
+                                <div className="skeleton skeleton-card-date"></div>
+                                <div className="skeleton skeleton-card-btn"></div>
                             </div>
-                        </div>
-                    ))}
+                        ))
+                    ) : (
+                        upcoming.map(m => (
+                            <div className="movie-card" key={m.id} onClick={() => navigate('/movie/' + m.id)}>
+                                <img src={`https://image.tmdb.org/t/p/w500${m.poster_path}`} alt="" />
+                                <h4>{m.title}</h4>
+                                <h5>{m.release_date}</h5>
+                                <button className="watch" onClick={(e) => handleAddToWatchlist(e, m)}>
+                                    <i className="fa-solid fa-plus"></i> Add to Watchlist
+                                </button>
+                                <div className="rating-badge">
+                                    <i className="fa-solid fa-star" style={{ color: "#FFD700" }}></i> {m.vote_average?.toFixed(1)}
+                                </div>
+                            </div>
+                        ))
+                    )}
                 </div>
             </div>
 

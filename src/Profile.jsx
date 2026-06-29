@@ -69,7 +69,7 @@ function Profile() {
     }
 
     // Fetch user profile data
-    fetch("http://localhost:5000/profile", {
+    fetch("https://cinevault-backend-nh60.onrender.com/profile", {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -128,7 +128,7 @@ function Profile() {
 
     setSaving(true)
     try {
-      const res = await fetch("http://localhost:5000/profile", {
+      const res = await fetch("https://cinevault-backend-nh60.onrender.com/profile", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -165,10 +165,51 @@ function Profile() {
 
   if (loading) {
     return (
-      <div className="profile-page-loading">
-        <div className="spinner"></div>
-        <p>Loading your CineVault profile...</p>
-      </div>
+      <>
+        <Navbar query="" setQuery={() => {}} searchResults={[]} />
+        <div className="profile-container-page">
+          <div className="profile-card-layout">
+            <div className="profile-skeleton-container">
+              <div className="profile-skeleton-header" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: "1px solid rgba(255, 255, 255, 0.08)", paddingBottom: "20px", marginBottom: "30px" }}>
+                <div className="skeleton" style={{ height: "36px", width: "200px", borderRadius: "6px" }}></div>
+                <div className="skeleton" style={{ height: "36px", width: "100px", borderRadius: "20px" }}></div>
+              </div>
+              <div className="profile-form-body">
+                <div className="profile-left-col" style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                  <div className="skeleton" style={{ width: "150px", height: "150px", borderRadius: "50%", marginBottom: "20px" }}></div>
+                  <div className="skeleton" style={{ width: "100%", height: "120px", borderRadius: "8px" }}></div>
+                </div>
+                <div className="profile-right-col" style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+                  <div>
+                    <div className="skeleton" style={{ height: "16px", width: "100px", marginBottom: "8px", borderRadius: "4px" }}></div>
+                    <div className="skeleton" style={{ height: "45px", width: "100%", borderRadius: "6px" }}></div>
+                  </div>
+                  <div>
+                    <div className="skeleton" style={{ height: "16px", width: "120px", marginBottom: "8px", borderRadius: "4px" }}></div>
+                    <div className="skeleton" style={{ height: "45px", width: "100%", borderRadius: "6px" }}></div>
+                  </div>
+                  <div>
+                    <div className="skeleton" style={{ height: "16px", width: "150px", marginBottom: "12px", borderRadius: "4px" }}></div>
+                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(60px, 1fr))", gap: "12px" }}>
+                      {Array(6).fill(0).map((_, i) => (
+                        <div key={i} className="skeleton" style={{ aspectRatio: "1", borderRadius: "8px" }}></div>
+                      ))}
+                    </div>
+                  </div>
+                  <div>
+                    <div className="skeleton" style={{ height: "16px", width: "180px", marginBottom: "8px", borderRadius: "4px" }}></div>
+                    <div className="skeleton" style={{ height: "45px", width: "100%", borderRadius: "6px" }}></div>
+                  </div>
+                  <div style={{ display: "flex", justifyContent: "flex-end", marginTop: "20px" }}>
+                    <div className="skeleton" style={{ height: "45px", width: "150px", borderRadius: "8px" }}></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <Footer />
+      </>
     )
   }
 

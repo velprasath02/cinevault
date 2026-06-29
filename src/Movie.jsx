@@ -50,7 +50,7 @@ function Movie() {
 
     const fetchReviews = async () => {
         try {
-            const res = await fetch(`http://localhost:5000/movies/${id}/reviews`)
+            const res = await fetch(`https://cinevault-backend-nh60.onrender.com/movies/${id}/reviews`)
             const data = await res.json()
             if (Array.isArray(data)) {
                 setReviews(data)
@@ -68,7 +68,7 @@ function Movie() {
             if (isLoggedIn) {
                 headers["Authorization"] = `Bearer ${token}`
             }
-            const res = await fetch(`http://localhost:5000/movies/${id}/rate`, { headers })
+            const res = await fetch(`https://cinevault-backend-nh60.onrender.com/movies/${id}/rate`, { headers })
             const data = await res.json()
             if (data) {
                 setCineRate({
@@ -100,7 +100,7 @@ function Movie() {
         }
         setSubmittingRating(true)
         try {
-            const res = await fetch(`http://localhost:5000/movies/${id}/rate`, {
+            const res = await fetch(`https://cinevault-backend-nh60.onrender.com/movies/${id}/rate`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -129,7 +129,7 @@ function Movie() {
             return
         }
         try {
-            const res = await fetch(`http://localhost:5000/reviews/${reviewId}/like`, {
+            const res = await fetch(`https://cinevault-backend-nh60.onrender.com/reviews/${reviewId}/like`, {
                 method: "POST",
                 headers: {
                     Authorization: `Bearer ${token}`
@@ -152,7 +152,7 @@ function Movie() {
             return
         }
         try {
-            const res = await fetch(`http://localhost:5000/reviews/${reviewId}/dislike`, {
+            const res = await fetch(`https://cinevault-backend-nh60.onrender.com/reviews/${reviewId}/dislike`, {
                 method: "POST",
                 headers: {
                     Authorization: `Bearer ${token}`
@@ -194,7 +194,7 @@ function Movie() {
         }
 
         try {
-            const res = await fetch(`http://localhost:5000/reviews/${reviewId}/reply`, {
+            const res = await fetch(`https://cinevault-backend-nh60.onrender.com/reviews/${reviewId}/reply`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -221,7 +221,7 @@ function Movie() {
         if (!newReviewText.trim()) return
         setSubmittingReview(true)
         try {
-            const res = await fetch(`http://localhost:5000/movies/${id}/reviews`, {
+            const res = await fetch(`https://cinevault-backend-nh60.onrender.com/movies/${id}/reviews`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -248,7 +248,7 @@ function Movie() {
     useEffect(() => {
         setLoading(true)
         // Fetch details
-        fetch(`http://localhost:5000/api/tmdb/movie/${id}`)
+        fetch(`https://cinevault-backend-nh60.onrender.com/api/tmdb/movie/${id}`)
             .then(response => response.json())
             .then(data => {
                 setPost(data)
@@ -257,7 +257,7 @@ function Movie() {
             .catch(err => console.error("Error fetching details:", err))
 
         // Fetch credits (cast & crew)
-        fetch(`http://localhost:5000/api/tmdb/movie/${id}/credits`)
+        fetch(`https://cinevault-backend-nh60.onrender.com/api/tmdb/movie/${id}/credits`)
             .then(response => response.json())
             .then(data => {
                 if (data.cast && data.crew) {
@@ -281,7 +281,7 @@ function Movie() {
 
         try {
             const res = await fetch(
-                "http://localhost:5000/watchlist",
+                "https://cinevault-backend-nh60.onrender.com/watchlist",
                 {
                     method: "POST",
                     headers: {
@@ -310,14 +310,39 @@ function Movie() {
 
     if (Loading) {
         return (
-            <div className="movie-desc" style={{ padding: "40px" }}>
-                <div className="poster skeleton" style={{ width: "300px", height: "450px" }}></div>
-                <div className="movie-info" style={{ marginLeft: "40px" }}>
-                    <div className="skeleton title" style={{ height: "40px", width: "300px", marginBottom: "15px" }}></div>
-                    <div className="skeleton tagline" style={{ height: "20px", width: "200px", marginBottom: "15px" }}></div>
-                    <div className="skeleton line" style={{ height: "15px", width: "250px", marginBottom: "10px" }}></div>
-                    <div className="skeleton line" style={{ height: "15px", width: "250px", marginBottom: "10px" }}></div>
-                    <div className="skeleton overview" style={{ height: "80px", width: "450px", marginTop: "20px" }}></div>
+            <div className="hero skeleton-hero" style={{ background: "#0b0808", minHeight: "100vh" }}>
+                <div className="overlay" style={{ background: "rgba(0, 0, 0, 0.8)", padding: "100px 40px" }}>
+                    <div className="back" style={{ visibility: "hidden", marginBottom: "30px" }}>
+                        <i className="fa-solid fa-arrow-left" style={{ marginRight: "5px" }}></i> Back
+                    </div>
+
+                    <div className="hero-content">
+                        <div className="poster skeleton" style={{ width: "300px", height: "450px", borderRadius: "12px" }}></div>
+
+                        <div className="info" style={{ display: "flex", flexDirection: "column", gap: "20px", marginLeft: "40px" }}>
+                            <div className="skeleton" style={{ height: "45px", width: "350px", borderRadius: "6px" }}></div>
+                            <div className="skeleton" style={{ height: "20px", width: "200px", borderRadius: "4px" }}></div>
+
+                            <div className="meta" style={{ display: "flex", gap: "15px" }}>
+                                <div className="skeleton" style={{ height: "20px", width: "80px", borderRadius: "4px" }}></div>
+                                <div className="skeleton" style={{ height: "20px", width: "50px", borderRadius: "4px" }}></div>
+                                <div className="skeleton" style={{ height: "20px", width: "120px", borderRadius: "4px" }}></div>
+                            </div>
+
+                            <div className="genres" style={{ display: "flex", gap: "10px" }}>
+                                <div className="skeleton" style={{ height: "24px", width: "70px", borderRadius: "12px" }}></div>
+                                <div className="skeleton" style={{ height: "24px", width: "90px", borderRadius: "12px" }}></div>
+                                <div className="skeleton" style={{ height: "24px", width: "60px", borderRadius: "12px" }}></div>
+                            </div>
+
+                            <div style={{ display: "flex", flexDirection: "column", gap: "10px", marginTop: "15px" }}>
+                                <div className="skeleton" style={{ height: "16px", width: "500px", borderRadius: "4px" }}></div>
+                                <div className="skeleton" style={{ height: "16px", width: "480px", borderRadius: "4px" }}></div>
+                                <div className="skeleton" style={{ height: "16px", width: "450px", borderRadius: "4px" }}></div>
+                                <div className="skeleton" style={{ height: "16px", width: "200px", borderRadius: "4px" }}></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         )

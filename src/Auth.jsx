@@ -27,7 +27,7 @@ function Auth() {
         try {
             if (isLogin) {
                 // LOGIN
-                const res = await fetch("http://localhost:5000/login", {
+                const res = await fetch("https://cinevault-backend-nh60.onrender.com/login", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
@@ -52,7 +52,7 @@ function Auth() {
 
             } else {
                 // SIGNUP
-                const res = await fetch("http://localhost:5000/signup", {
+                const res = await fetch("https://cinevault-backend-nh60.onrender.com/signup", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"

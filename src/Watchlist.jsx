@@ -7,11 +7,12 @@ function Watchlist() {
   const token = localStorage.getItem("token")
   const navigate = useNavigate()
   const isLoggedIn = token && token !== "null" && token !== "undefined"
+  const [loading, setLoading] = useState(isLoggedIn)
 
   const fetchWatchlist = async () => {
     if (!isLoggedIn) return
     try {
-      const res = await fetch("http://localhost:5000/watchlist", {
+      const res = await fetch("https://cinevault-backend-nh60.onrender.com/watchlist", {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -26,12 +27,14 @@ function Watchlist() {
     } catch (err) {
       console.log(err)
       setMovies([])
+    } finally {
+      setLoading(false)
     }
   }
 
   const removeMovie = async (id) => {
     try {
-      await fetch(`http://localhost:5000/watchlist/${id}`, {
+      await fetch(`https://cinevault-backend-nh60.onrender.com/watchlist/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`
@@ -66,6 +69,19 @@ function Watchlist() {
               Please login first to view your watchlist.
             </p>
             <Link to="/login" style={{ color: "#E50914", fontWeight: "600", textDecoration: "none" }}>Go to Login</Link>
+          </div>
+        ) : loading ? (
+          <div className="watchlist-grid">
+            {Array(4).fill(0).map((_, idx) => (
+              <div className="skeleton-card" key={idx} style={{ width: "100%", height: "380px" }}>
+                <div className="skeleton skeleton-card-img" style={{ height: "240px" }}></div>
+                <div className="skeleton skeleton-card-title" style={{ height: "16px", marginTop: "12px", width: "80%" }}></div>
+                <div style={{ display: "flex", gap: "10px", marginTop: "auto" }}>
+                  <div className="skeleton" style={{ height: "30px", flex: 1, borderRadius: "6px" }}></div>
+                  <div className="skeleton" style={{ height: "30px", flex: 1, borderRadius: "6px" }}></div>
+                </div>
+              </div>
+            ))}
           </div>
         ) : movies.length === 0 ? (
           <div style={{ textAlign: "center", marginTop: "100px", color: "#aaa" }}>
