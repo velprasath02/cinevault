@@ -1,0 +1,163 @@
+/* HERO CONTAINER */
+.h{
+height:90vh;
+width:100%;
+background-size:cover;
+background-position:center;
+position:relative;
+
+display:flex;
+align-items:center;
+justify-content:flex-start; /* VERY IMPORTANT */
+}
+
+/* DARK OVERLAY */
+.h-overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+
+display:flex;
+align-items:center;
+
+background:linear-gradient(
+to right,
+rgba(0,0,0,0.9) 25%,
+rgba(0,0,0,0.6) 50%,
+transparent 100%
+);
+}
+
+/* CONTENT */
+.h-content{
+position:relative;
+margin-top: 300px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+
+max-width:500px;
+margin-left:20px; /* controls left spacing */
+
+gap:15px;
+color:white;
+}
+
+/* TITLE */
+.h-content h1{
+font-size:48px;
+line-height:1.1;
+margin:0;
+}
+
+/* DESCRIPTION */
+.tagline{
+color:#B3B3B3;
+font-size:16px;
+line-height:1.6;
+margin-bottom:20px;
+}
+
+/* META INFO */
+.meta{
+display:flex;
+gap:15px;
+align-items:center;
+font-size:14px;
+color:#ccc;
+}
+
+/* BUTTON CONTAINER */
+.h-buttons{
+display:flex;
+gap:15px;
+margin-top:10px;
+}
+
+/* BUTTON STYLE */
+.action-btn{
+display:inline-flex;
+align-items:center;
+gap:6px;
+
+padding:10px 20px;
+background:#E50914;
+color:white;
+
+border:none;
+border-radius:6px;
+
+font-size:14px;
+font-weight:500;
+
+cursor:pointer;
+transition:0.3s;
+}
+
+.action-btn:hover{
+background:#ff1f2a;
+transform:translateY(-2px);
+}
+
+/* FADE ANIMATION */
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(10px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* OPTIONAL ZOOM EFFECT */
+.h{
+animation:zoom 8s ease-in-out infinite alternate;
+}
+
+@keyframes zoom{
+from{
+background-size:100%;
+}
+to{
+background-size:110%;
+}
+}
+
+@media (max-width: 768px) {
+  .h {
+    height: 70vh;
+    animation: none;
+  }
+
+  .h-overlay {
+    background: linear-gradient(
+      to top,
+      rgba(0,0,0,0.95) 40%,
+      rgba(0,0,0,0.5) 70%,
+      rgba(0,0,0,0.2) 100%
+    );
+    align-items: flex-end;
+    padding-bottom: 40px;
+  }
+
+  .h-content {
+    margin-top: 0;
+    margin-left: 15px;
+    margin-right: 15px;
+    max-width: 100%;
+    gap: 10px;
+  }
+
+  .h-content h1 {
+    font-size: 32px;
+  }
+
+  .tagline {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+}

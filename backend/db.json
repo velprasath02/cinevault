@@ -1,0 +1,646 @@
+{
+  "users": [
+    {
+      "_id": "1782298008552",
+      "username": "testuser",
+      "email": "test_1782298008285@example.com",
+      "password": "$2b$10$m/XPRfwLrENgGpsNnJgIV./uRY6iSTp0wPrjrkEhVBRKXT8d.6mSe",
+      "watchlist": []
+    },
+    {
+      "_id": "1782298320398",
+      "username": "bsdbd",
+      "email": "vel@gmail.com",
+      "password": "$2b$10$G8/4P1tFrbV2VpLkWil9futB4NKfcgyuk8j7fZxWNQQ4sTkwizV6i",
+      "watchlist": []
+    },
+    {
+      "_id": "1782381356830",
+      "username": "testuser",
+      "email": "test_1782381356576@example.com",
+      "password": "$2b$10$vNcKqYh9tpYxIoEQLuq0COtxPJceQTZpAPS3dcbHPlO20TFKaCrxG",
+      "watchlist": []
+    },
+    {
+      "_id": "1782381801854",
+      "username": "viper",
+      "email": "viper@gmail.com",
+      "password": "$2b$10$ELOm61D3DfL5bY5CzbfosOG0x1bfWsVbez3LZi0kjoiLi.B7g2Nca",
+      "watchlist": []
+    },
+    {
+      "_id": "1782381957313",
+      "username": "testuser",
+      "email": "test_1782381957031@example.com",
+      "password": "$2b$10$d9MPNOniDi1E095N3pPhpuYdnBHzULuhHfeKoDXbSBAz/.vxlj1uK",
+      "watchlist": []
+    },
+    {
+      "_id": "1782382178780",
+      "username": "viper02",
+      "email": "viper2@gmail.com",
+      "password": "$2b$10$l1zmdhl.gikzX.v8STCyxuLmgLr0q5mPfCuRLU2IOsbvCl8qSFr9a",
+      "watchlist": []
+    },
+    {
+      "_id": "1782382216096",
+      "username": "viper03",
+      "email": "viper3@gmail.com",
+      "password": "$2b$10$pZg7WdKp17V9eZyPNRyZ4u6fnQR5s0MIMgyCs7t0Wel2aw92ML4ya",
+      "watchlist": []
+    },
+    {
+      "_id": "1782382620307",
+      "username": "testuser",
+      "email": "test_1782382620180@example.com",
+      "password": "$2b$10$xJgWDxTaoz7GsVuqDV9p4O93Cmst4Qj4S0b/5ORYgyMDUrRhAK46i",
+      "watchlist": []
+    },
+    {
+      "_id": "1782382643831",
+      "username": "testuser",
+      "email": "test_1782382643682@example.com",
+      "password": "$2b$10$TdRJ50R3WpM62BV2tRwC.OVTGnl.lRfEPNZ0/Yn/5yAFLBtlAQ/Kq",
+      "watchlist": []
+    },
+    {
+      "_id": "1782383691157",
+      "username": "testuser",
+      "email": "test_1782383691000@example.com",
+      "password": "$2b$10$KyLMDqGfBTSiZ5q4J6mGaubJ0PmZwRX2l0QK/P05968K3CGTrBzLq",
+      "watchlist": []
+    },
+    {
+      "_id": "1782383716094",
+      "username": "testuser",
+      "email": "test_1782383715807@example.com",
+      "password": "$2b$10$.NCgMxJ04C9t.uHKCu/FQegqHWg2Adw/oNPZi5lnrOqzqwYnM0gf6",
+      "watchlist": []
+    },
+    {
+      "_id": "1782383752180",
+      "username": "testuser",
+      "email": "test_1782383751965@example.com",
+      "password": "$2b$10$.x2WxXdMf2ebkYJ36OrENOK/sv9Lu5qd6TRcGSCfDPky//15C5ZeG",
+      "watchlist": []
+    },
+    {
+      "_id": "1782383970685",
+      "username": "testuser",
+      "email": "test_1782383970568@example.com",
+      "password": "$2b$10$hLsWy7uui6vCRnwCceWpIOGovKfaPNtT33xhDJ8hCktxwUxKPeXPq",
+      "watchlist": []
+    },
+    {
+      "_id": "1782384086461",
+      "username": "testuser",
+      "email": "test_1782384086344@example.com",
+      "password": "$2b$10$ElBz9zMjmSmuK1w/.a7rmuK3mKHfuEpZYbOxtCjbvkMVU3eVzRoy2",
+      "watchlist": []
+    },
+    {
+      "_id": "1782384175075",
+      "username": "testuser",
+      "email": "test_1782384174956@example.com",
+      "password": "$2b$10$CaZ8yw1my6MHZH3SdmZwMe8lP5KJ9iWEbVKQYoWY5UxLHDgMSgfS6",
+      "watchlist": []
+    },
+    {
+      "_id": "1782384289242",
+      "username": "testuser",
+      "email": "test_1782384289125@example.com",
+      "password": "$2b$10$xaShdPRmB1kgMYqGRDuRz.zHcpckSdIzWhMi66mBFwzaeDwhcgWRi",
+      "watchlist": []
+    },
+    {
+      "_id": "1782384349264",
+      "username": "testuser",
+      "email": "test_1782384349079@example.com",
+      "password": "$2b$10$jspA7HI9JPncMYt1iJZCleBU9oDGjrrp/vALl.juo6Vkp/6D/dWxS",
+      "watchlist": []
+    },
+    {
+      "_id": "1782384526815",
+      "username": "testuser",
+      "email": "test_1782384526589@example.com",
+      "password": "$2b$10$/UpTG1NjbIgQJ9Ya40J1X.g43NXssPjVpYjj9DHkE9mpd2uzFWffu",
+      "watchlist": []
+    },
+    {
+      "_id": "1782384645958",
+      "username": "testuser",
+      "email": "test_1782384645839@example.com",
+      "password": "$2b$10$rwoE9n.QsfLejAmIBBtm.un6hqVbd6GeO9RkWcZ8CkoOmna0vHiz.",
+      "watchlist": []
+    },
+    {
+      "_id": "1782384717753",
+      "username": "vel",
+      "email": "v@gmail.com",
+      "password": "$2b$10$nNngczHBZ1fyQSV1LfX3iOZ2c5ztxtRUHrmFqipuKb4nftZU8mXme",
+      "watchlist": [
+        {
+          "movieId": 1339713,
+          "title": "Obsession",
+          "poster": "/bRwnj8WEKBCvmfeUNOukJPwB43K.jpg"
+        },
+        {
+          "movieId": 969681,
+          "title": "Spider-Man: Brand New Day",
+          "poster": "/yyB2VJEW3an2xCdcYCPQhn9QERR.jpg"
+        },
+        {
+          "movieId": 1108427,
+          "title": "Moana",
+          "poster": "/zKVgiv5qHCvCLT4A2ymJi5QeXDH.jpg"
+        },
+        {
+          "movieId": 1084244,
+          "title": "Toy Story 5",
+          "poster": "/a6H2U7pjibMia41TwyFVd1PVQw3.jpg"
+        },
+        {
+          "movieId": 28322,
+          "title": "Madness",
+          "poster": "/gV0J0Fqw2mYMtQbzb0ruxv9MAeZ.jpg"
+        },
+        {
+          "movieId": 936075,
+          "title": "Michael",
+          "poster": "/zm0KAbOjlt9eR5y7vDiL2dEOwMl.jpg"
+        },
+        {
+          "movieId": 238,
+          "title": "The Godfather",
+          "poster": "/3bhkrj58Vtu7enYsRolD1fZdja1.jpg"
+        },
+        {
+          "movieId": 687163,
+          "title": "Project Hail Mary",
+          "poster": "/yihdXomYb5kTeSivtFndMy5iDmf.jpg"
+        },
+        {
+          "movieId": 278,
+          "title": "The Shawshank Redemption",
+          "poster": "/9cqNxx0GxF0bflZmeSMuL5tnGzr.jpg"
+        },
+        {
+          "movieId": 1007757,
+          "title": "Swapped",
+          "poster": "/tHhxWxge06goXU6ZQH1hj7vK8Hd.jpg"
+        },
+        {
+          "movieId": 1127384,
+          "title": "Deep Water",
+          "poster": "/kjcuS7xaRyqRjVaVcH4t0qHshuX.jpg"
+        },
+        {
+          "movieId": 1081003,
+          "title": "Supergirl",
+          "poster": "/niSvU02l2BONH9ivubV6K1a5QiK.jpg"
+        },
+        {
+          "movieId": 1280738,
+          "title": "The Furious",
+          "poster": "/zP19YO60jwEsfKd5Qf1UvA5uJu8.jpg"
+        }
+      ],
+      "bio": "",
+      "profilePicture": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect x=\"0\" y=\"0\" width=\"100\" height=\"100\" fill=\"%2337474F\" rx=\"20\"/><rect x=\"20\" y=\"35\" width=\"60\" height=\"40\" rx=\"3\" fill=\"%23212121\"/><path d=\"M20 25 L80 30 L80 36 L20 31 Z\" fill=\"%23212121\"/><path d=\"M22 25 L30 25 L25 31 L20 31 Z M38 26 L46 27 L41 33 L33 32 Z M54 28 L62 29 L57 35 L49 34 Z M70 29 L78 30 L73 36 L65 35 Z\" fill=\"%23FFFFFF\"/><circle cx=\"50\" cy=\"55\" r=\"3\" fill=\"%23E50914\"/><text x=\"50\" y=\"68\" fill=\"%23757575\" font-family=\"sans-serif\" font-size=\"7\" font-weight=\"bold\" text-anchor=\"middle\">SCENE 1</text></svg>"
+    },
+    {
+      "_id": "1782385006835",
+      "username": "testuser",
+      "email": "test_1782385006662@example.com",
+      "password": "$2b$10$GiN3WnuLl0uFuinuiEjyruXwRITkXJTJnxcBfQi/edabRmeSkVmWO",
+      "watchlist": []
+    },
+    {
+      "_id": "1782385035176",
+      "username": "testuser",
+      "email": "test_1782385035063@example.com",
+      "password": "$2b$10$mmAIqxTajglVWP5nA7z3vuyN2Tm9jCSouuWdTITixf1f8vAK8s3s6",
+      "watchlist": []
+    }
+  ],
+  "reviews": [
+    {
+      "id": "1782381957538",
+      "movieId": "550",
+      "username": "testuser",
+      "reviewText": "This movie is amazing!",
+      "createdAt": "2026-06-25T10:05:57.538Z",
+      "likes": [],
+      "dislikes": [
+        "1782383716094",
+        "1782383752180",
+        "1782383970685",
+        "1782384086461",
+        "1782384175075",
+        "1782384289242",
+        "1782384349264",
+        "1782384526815",
+        "1782384645958",
+        "1782385035176"
+      ],
+      "replies": [
+        {
+          "id": "1782383716346",
+          "username": "testuser",
+          "replyText": "This is a test reply!",
+          "createdAt": "2026-06-25T10:35:16.346Z"
+        },
+        {
+          "id": "1782383752413",
+          "username": "testuser",
+          "replyText": "This is a test reply!",
+          "createdAt": "2026-06-25T10:35:52.413Z"
+        },
+        {
+          "id": "1782383970835",
+          "username": "testuser",
+          "replyText": "This is a test reply!",
+          "createdAt": "2026-06-25T10:39:30.835Z"
+        },
+        {
+          "id": "1782384086621",
+          "username": "testuser",
+          "replyText": "This is a test reply!",
+          "createdAt": "2026-06-25T10:41:26.621Z"
+        },
+        {
+          "id": "1782384175234",
+          "username": "testuser",
+          "replyText": "This is a test reply!",
+          "createdAt": "2026-06-25T10:42:55.234Z"
+        },
+        {
+          "id": "1782384289402",
+          "username": "testuser",
+          "replyText": "This is a test reply!",
+          "createdAt": "2026-06-25T10:44:49.402Z"
+        },
+        {
+          "id": "1782384349482",
+          "username": "testuser",
+          "replyText": "This is a test reply!",
+          "createdAt": "2026-06-25T10:45:49.482Z"
+        },
+        {
+          "id": "1782384527077",
+          "username": "testuser",
+          "replyText": "This is a test reply!",
+          "createdAt": "2026-06-25T10:48:47.077Z"
+        },
+        {
+          "id": "1782384646133",
+          "username": "testuser",
+          "replyText": "This is a test reply!",
+          "createdAt": "2026-06-25T10:50:46.133Z"
+        },
+        {
+          "id": "1782385035342",
+          "username": "testuser",
+          "replyText": "This is a test reply!",
+          "createdAt": "2026-06-25T10:57:15.343Z"
+        }
+      ]
+    },
+    {
+      "id": "1782382371552",
+      "movieId": "1301421",
+      "username": "viper03",
+      "reviewText": "good movie",
+      "createdAt": "2026-06-25T10:12:51.552Z",
+      "likes": [],
+      "dislikes": [],
+      "replies": [
+        {
+          "id": "1782383908842",
+          "username": "viper03",
+          "replyText": "yeah",
+          "createdAt": "2026-06-25T10:38:28.842Z"
+        }
+      ]
+    },
+    {
+      "id": "1782382620421",
+      "movieId": "550",
+      "username": "testuser",
+      "reviewText": "This movie is amazing!",
+      "createdAt": "2026-06-25T10:17:00.421Z"
+    },
+    {
+      "id": "1782382643985",
+      "movieId": "550",
+      "username": "testuser",
+      "reviewText": "This movie is amazing!",
+      "createdAt": "2026-06-25T10:17:23.985Z"
+    },
+    {
+      "id": "1782383057160",
+      "movieId": "687163",
+      "username": "viper03",
+      "reviewText": "the best!\n\n",
+      "createdAt": "2026-06-25T10:24:17.160Z"
+    },
+    {
+      "id": "1782383691304",
+      "movieId": "550",
+      "username": "testuser",
+      "reviewText": "This movie is amazing!",
+      "createdAt": "2026-06-25T10:34:51.304Z"
+    },
+    {
+      "id": "1782383716268",
+      "movieId": "550",
+      "username": "testuser",
+      "reviewText": "This movie is amazing!",
+      "createdAt": "2026-06-25T10:35:16.268Z",
+      "likes": [],
+      "dislikes": [],
+      "replies": []
+    },
+    {
+      "id": "1782383752357",
+      "movieId": "550",
+      "username": "testuser",
+      "reviewText": "This movie is amazing!",
+      "createdAt": "2026-06-25T10:35:52.357Z",
+      "likes": [],
+      "dislikes": [],
+      "replies": []
+    },
+    {
+      "id": "1782383970795",
+      "movieId": "550",
+      "username": "testuser",
+      "reviewText": "This movie is amazing!",
+      "createdAt": "2026-06-25T10:39:30.795Z",
+      "likes": [],
+      "dislikes": [],
+      "replies": []
+    },
+    {
+      "id": "1782384086576",
+      "movieId": "550",
+      "username": "testuser",
+      "reviewText": "This movie is amazing!",
+      "createdAt": "2026-06-25T10:41:26.576Z",
+      "likes": [],
+      "dislikes": [],
+      "replies": []
+    },
+    {
+      "id": "1782384162866",
+      "movieId": "240",
+      "username": "viper03",
+      "reviewText": "absolute cinema!\n\n",
+      "createdAt": "2026-06-25T10:42:42.866Z",
+      "likes": [],
+      "dislikes": [],
+      "replies": [
+        {
+          "id": "1782384171635",
+          "username": "viper03",
+          "replyText": "FR!!",
+          "createdAt": "2026-06-25T10:42:51.635Z"
+        },
+        {
+          "id": "1782384975855",
+          "username": "vel",
+          "replyText": "agreed💯",
+          "createdAt": "2026-06-25T10:56:15.855Z"
+        }
+      ]
+    },
+    {
+      "id": "1782384175186",
+      "movieId": "550",
+      "username": "testuser",
+      "reviewText": "This movie is amazing!",
+      "createdAt": "2026-06-25T10:42:55.186Z",
+      "likes": [],
+      "dislikes": [],
+      "replies": []
+    },
+    {
+      "id": "1782384188638",
+      "movieId": "240",
+      "username": "viper03",
+      "reviewText": "solid 10/10",
+      "createdAt": "2026-06-25T10:43:08.638Z",
+      "likes": [],
+      "dislikes": [],
+      "replies": []
+    },
+    {
+      "id": "1782384289356",
+      "movieId": "550",
+      "username": "testuser",
+      "reviewText": "This movie is amazing!",
+      "createdAt": "2026-06-25T10:44:49.356Z",
+      "likes": [],
+      "dislikes": [],
+      "replies": []
+    },
+    {
+      "id": "1782384349430",
+      "movieId": "550",
+      "username": "testuser",
+      "reviewText": "This movie is amazing!",
+      "createdAt": "2026-06-25T10:45:49.430Z",
+      "likes": [],
+      "dislikes": [],
+      "replies": []
+    },
+    {
+      "id": "1782384527017",
+      "movieId": "550",
+      "username": "testuser",
+      "reviewText": "This movie is amazing!",
+      "createdAt": "2026-06-25T10:48:47.017Z",
+      "likes": [],
+      "dislikes": [],
+      "replies": []
+    },
+    {
+      "id": "1782384646080",
+      "movieId": "550",
+      "username": "testuser",
+      "reviewText": "This movie is amazing!",
+      "createdAt": "2026-06-25T10:50:46.080Z",
+      "likes": [],
+      "dislikes": [],
+      "replies": []
+    },
+    {
+      "id": "1782384941760",
+      "movieId": "940721",
+      "username": "vel",
+      "reviewText": "THE best GODZILA !!\n",
+      "createdAt": "2026-06-25T10:55:41.760Z",
+      "likes": [],
+      "dislikes": [],
+      "replies": []
+    },
+    {
+      "id": "1782385035294",
+      "movieId": "550",
+      "username": "testuser",
+      "reviewText": "This movie is amazing!",
+      "createdAt": "2026-06-25T10:57:15.294Z",
+      "likes": [],
+      "dislikes": [],
+      "replies": []
+    },
+    {
+      "id": "1782467503950",
+      "movieId": "1301421",
+      "username": "vel",
+      "reviewText": "suriya pakada\n",
+      "createdAt": "2026-06-26T09:51:43.950Z",
+      "likes": [
+        "1782384717753"
+      ],
+      "dislikes": [],
+      "replies": [
+        {
+          "id": "1782467514284",
+          "username": "vel",
+          "replyText": "kilo 10 rupees",
+          "createdAt": "2026-06-26T09:51:54.284Z"
+        }
+      ]
+    },
+    {
+      "id": "1782468585572",
+      "movieId": "945961",
+      "username": "vel",
+      "reviewText": "absolute nightmare!!\n",
+      "createdAt": "2026-06-26T10:09:45.572Z",
+      "likes": [],
+      "dislikes": [],
+      "replies": [
+        {
+          "id": "1782468598275",
+          "username": "vel",
+          "replyText": "fr fr",
+          "createdAt": "2026-06-26T10:09:58.275Z"
+        }
+      ]
+    },
+    {
+      "id": "1782468621554",
+      "movieId": "945961",
+      "username": "vel",
+      "reviewText": "recent best alien moview",
+      "createdAt": "2026-06-26T10:10:21.554Z",
+      "likes": [],
+      "dislikes": [],
+      "replies": []
+    },
+    {
+      "id": "1782472014926",
+      "movieId": "1007757",
+      "username": "vel",
+      "reviewText": "good movie",
+      "createdAt": "2026-06-26T11:06:54.926Z",
+      "likes": [],
+      "dislikes": [],
+      "replies": []
+    }
+  ],
+  "ratings": [
+    {
+      "movieId": "550",
+      "userId": "1782383716094",
+      "rating": 9
+    },
+    {
+      "movieId": "550",
+      "userId": "1782383752180",
+      "rating": 9
+    },
+    {
+      "movieId": "1301421",
+      "userId": "1782382216096",
+      "rating": 10
+    },
+    {
+      "movieId": "550",
+      "userId": "1782383970685",
+      "rating": 9
+    },
+    {
+      "movieId": "240",
+      "userId": "1782382216096",
+      "rating": 10
+    },
+    {
+      "movieId": "550",
+      "userId": "1782384086461",
+      "rating": 9
+    },
+    {
+      "movieId": "550",
+      "userId": "1782384175075",
+      "rating": 9
+    },
+    {
+      "movieId": "550",
+      "userId": "1782384289242",
+      "rating": 9
+    },
+    {
+      "movieId": "550",
+      "userId": "1782384349264",
+      "rating": 9
+    },
+    {
+      "movieId": "936075",
+      "userId": "1782382216096",
+      "rating": 8
+    },
+    {
+      "movieId": "550",
+      "userId": "1782384526815",
+      "rating": 9
+    },
+    {
+      "movieId": "550",
+      "userId": "1782384645958",
+      "rating": 9
+    },
+    {
+      "movieId": "800623",
+      "userId": "1782384717753",
+      "rating": 8
+    },
+    {
+      "movieId": "240",
+      "userId": "1782384717753",
+      "rating": 8
+    },
+    {
+      "movieId": "550",
+      "userId": "1782385035176",
+      "rating": 9
+    },
+    {
+      "movieId": "1301421",
+      "userId": "1782384717753",
+      "rating": 8
+    },
+    {
+      "movieId": "1108427",
+      "userId": "1782384717753",
+      "rating": 10
+    },
+    {
+      "movieId": "348",
+      "userId": "1782384717753",
+      "rating": 10
+    }
+  ]
+}
