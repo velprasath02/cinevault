@@ -73,8 +73,8 @@ function Watchlist() {
         ) : loading ? (
           <div className="watchlist-grid">
             {Array(4).fill(0).map((_, idx) => (
-              <div className="skeleton-card" key={idx} style={{ width: "100%", height: "380px" }}>
-                <div className="skeleton skeleton-card-img" style={{ height: "240px" }}></div>
+              <div className="skeleton-card" key={idx} style={{ width: "100%", height: "auto", aspectRatio: "2 / 3.8", display: "flex", flexDirection: "column" }}>
+                <div className="skeleton skeleton-card-img" style={{ width: "100%", aspectRatio: "2 / 3", height: "auto" }}></div>
                 <div className="skeleton skeleton-card-title" style={{ height: "16px", marginTop: "12px", width: "80%" }}></div>
                 <div style={{ display: "flex", gap: "10px", marginTop: "auto" }}>
                   <div className="skeleton" style={{ height: "30px", flex: 1, borderRadius: "6px" }}></div>

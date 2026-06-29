@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Bebas+Neue&display=swap');
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -1474,7 +1478,8 @@ body {
     position: relative;
     left: auto;
     transform: none;
-    width: 100%;
+    width: calc(100% - 10px);
+    margin: 0 auto;
     order: 3;
   }
 
@@ -1566,9 +1571,15 @@ body {
 
   /* Roulette Modal */
   .picker-modal {
-    width: 90%;
-    max-width: 320px;
-    padding: 20px;
+    width: 85%;
+    max-width: 300px;
+    padding: 20px 15px;
+  }
+
+  .picker-modal .card-container-3d {
+    width: 140px;
+    height: 200px;
+    margin: 15px auto;
   }
 
   /* Details Page (Movie.jsx) */
@@ -1631,17 +1642,21 @@ body {
   }
 
   .btns {
+    display: flex;
     justify-content: center;
-    flex-wrap: wrap;
     width: 100%;
+    gap: 10px;
+    flex-wrap: nowrap;
   }
 
   .watch-now, .info .watch {
-    width: 100%;
+    flex: 1;
+    max-width: 180px;
     text-align: center;
     box-sizing: border-box;
-    padding: 10px 18px;
-    font-size: 13px;
+    padding: 10px 8px;
+    font-size: 12px;
+    white-space: nowrap;
   }
 
   .cast-grid {
@@ -1769,7 +1784,7 @@ body {
   }
 
   .watchlist-grid .movie-card img {
-    height: 180px;
+    height: auto;
     width: 100%;
     object-fit: cover;
     aspect-ratio: 2 / 3;
