@@ -16,9 +16,14 @@ app.use(express.json())
 /* ==========================
    TMDB PROXY
 ========================== */
-app.get("/api/tmdb/*splat", async (req, res) => {
+app.get("/api/tmdb/{*splat}", async (req, res) => {
   try {
-    const apiPath = req.params.splat || req.path.replace(/^\/api\/tmdb\//, "")
+    let apiPath = req.params.splat
+    if (Array.isArray(apiPath)) {
+      apiPath = apiPath.join("/")
+    } else if (typeof apiPath !== "string") {
+      apiPath = req.path.replace(/^\/api\/tmdb\//, "")
+    }
     const queryParams = new URLSearchParams(req.query)
     queryParams.set("api_key", process.env.TMDB_API_KEY)
 
