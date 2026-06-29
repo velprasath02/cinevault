@@ -24,10 +24,17 @@ app.get("/api/tmdb/{*splat}", async (req, res) => {
     } else if (typeof apiPath !== "string") {
       apiPath = req.path.replace(/^\/api\/tmdb\//, "")
     }
+
+    // Defensively clean any leading or trailing slashes
+    if (typeof apiPath === "string") {
+      apiPath = apiPath.replace(/^\/+|\/+$/g, "")
+    }
+
     const queryParams = new URLSearchParams(req.query)
     queryParams.set("api_key", process.env.TMDB_API_KEY)
 
     const url = `https://api.themoviedb.org/3/${apiPath}?${queryParams.toString()}`
+
     const response = await fetch(url)
     const data = await response.json()
     res.status(response.status).json(data)
@@ -586,6 +593,8 @@ app.put("/profile", authMiddleware, async (req, res) => {
   }
 })
 
-app.listen(5000, () => {
-  console.log("Server running on port 5000")
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`)
 })
